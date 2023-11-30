@@ -8,15 +8,13 @@ class StringBuilder {
     return this.#value;
   }
   padEnd(str) {
-    const lengthEnd = this.#value.length + str.length;
-    this.#value.padEnd(lengthEnd, str);
+    this.#value = `${this.#value}` + `${str}`;
   }
   padStart(str) {
-    this.#value.padStart(this.#value.length + str.length, str);
+    this.#value = `${str}` + `${this.#value}`;
   }
   padBoth(str) {
-    const lengthBoth = this.#value.length + str.length;
-    this.#value.padStart(lengthBoth, str).padEnd(lengthBoth + str.length, str);
+    this.#value = `${str}` + `${this.#value}` + `${str}`;
   }
 }
 
